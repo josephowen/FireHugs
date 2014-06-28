@@ -46,10 +46,15 @@ public class Map : MonoBehaviour {
 			m_gameObjectRow[c] = go;
 		}
 
+		int elevation = m_groundRow;
+		int expanse = 0;
 		m_map = new Tile[m_columns][];
 		for(int c = 0; c < m_map.Length; c++) {
 			m_map[c] = new Tile[m_rows];
 			for(int r = 0; r < m_rows; r++) {
+				if(m_map[c][r] != null) {
+					continue;
+				}
 				// Generate baseline
 				if(r < m_rockRow) {
 					m_map[c][r] = GenerateTile(Tile.TileTypes.Rock, c, r);
@@ -67,22 +72,34 @@ public class Map : MonoBehaviour {
 							m_map[c][r] = GenerateTile(Tile.TileTypes.None, c, r);
 						}
 					} else {
-						if(IsValidFloorType(m_map[c-1][r].Type)) {
-							int dir = UnityEngine.Random.Range(-1, 1);
-							// Hills going down
-							if(dir==-1 && IsValidFloorType(m_map[c-1][Math.Min(r+1,m_rows-1)].Type) && r-1 >= m_groundRow) {
-								m_map[c][r] = GenerateTile(Tile.TileTypes.Grass, c, r);
-								m_map[c-1][r+1].Type = Tile.TileTypes.GrassRightLedge;
+						if(r == elevation) {
+							// Change elevation
+							if(UnityEngine.Random.Range(0,Math.Max(0,10-expanse)) == 0) {
+								bool down = false;
+								if(elevation <= m_groundRow) {
+									elevation++;
+									down = false;
+								} else if (elevation >= m_rows) {
+									elevation--;
+									down = true;
+								} else {
+									down = UnityEngine.Random.Range(0,4) == 0;
+									elevation += down ? -1 : 1;
+								}
+								if(down) {
+									m_map[c][r-1] = GenerateTile(Tile.TileTypes.Dirt, c, r-1);
+									m_map[c][r] = GenerateTile(Tile.TileTypes.None, c, r);
+								} else {
+									m_map[c][r] = GenerateTile(Tile.TileTypes.Ground, c, r);
+									m_map[c][r+1] = GenerateTile(Tile.TileTypes.Dirt, c, r+1);
+								}
 							}
-							// Hills going up
-							else if(dir==1 && IsValidFloorType(m_map[c-1][Math.Max(0,r-1)].Type)) {
-								m_map[c][r] = GenerateTile(Tile.TileTypes.Grass, c, r);
-								m_map[c][r] = GenerateTile(Tile.TileTypes.GrassLeftLedge, c, r);
-							}
-							// Same elevation
+							// Stay at current elevation
 							else {
-								m_map[c][r] = GenerateTile(Tile.TileTypes.Grass, c, r);
+								m_map[c][r] = GenerateTile(Tile.TileTypes.Dirt, c, r);
 							}
+						} else if (m_map[c-1][r].Type == Tile.TileTypes.Ground){
+							m_map[c][r] = GenerateTile(Tile.TileTypes.Ground, c, r);
 						}
 						// Empty air
 						else {
