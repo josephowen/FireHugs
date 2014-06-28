@@ -72,6 +72,7 @@ public class Map : MonoBehaviour {
 							m_map[c][r] = GenerateTile(Tile.TileTypes.None, c, r);
 						}
 					} else {
+						Tile.TileTypes previousType = m_map[c-1][r].Type;
 						if(r == elevation) {
 							// Change elevation
 							if(UnityEngine.Random.Range(0,Math.Max(0,10-expanse)) == 0) {
@@ -87,16 +88,19 @@ public class Map : MonoBehaviour {
 									elevation += down ? -1 : 1;
 								}
 								if(down) {
-									m_map[c][r-1] = GenerateTile(Tile.TileTypes.Dirt, c, r-1);
+									Tile.TileTypes nextType = GetNextTileType(previousType, false, true);
+									m_map[c][r-1] = GenerateTile(nextType, c, r-1);
 									m_map[c][r] = GenerateTile(Tile.TileTypes.None, c, r);
 								} else {
+									Tile.TileTypes nextType = GetNextTileType(previousType, true, false);
 									m_map[c][r] = GenerateTile(Tile.TileTypes.Ground, c, r);
-									m_map[c][r+1] = GenerateTile(Tile.TileTypes.Dirt, c, r+1);
+									m_map[c][r+1] = GenerateTile(nextType, c, r+1);
 								}
 							}
 							// Stay at current elevation
 							else {
-								m_map[c][r] = GenerateTile(Tile.TileTypes.Dirt, c, r);
+								Tile.TileTypes nextType = GetNextTileType(previousType, false, false);
+								m_map[c][r] = GenerateTile(nextType, c, r);
 							}
 						} else if (m_map[c-1][r].Type == Tile.TileTypes.Ground){
 							m_map[c][r] = GenerateTile(Tile.TileTypes.Ground, c, r);
@@ -145,5 +149,56 @@ public class Map : MonoBehaviour {
 			return false;
 		}
 		return true;
+	}
+
+	Tile.TileTypes GetNextTileType(Tile.TileTypes previousType, bool up, bool down) {
+		if(up) {
+			switch(previousType) {
+				case Tile.TileTypes.GrassRight:
+					return Tile.TileTypes.GrassLeftLedge;
+				case Tile.TileTypes.GrassLeft:
+					return Tile.TileTypes.Dirt;
+				case Tile.TileTypes.Grass:
+					return Tile.TileTypes.GrassLeftLedge;
+				case Tile.TileTypes.Dirt:
+					return Tile.TileTypes.Dirt;
+				default:
+					return previousType;
+			}
+		} else if (down) {
+			switch(previousType) {
+				case Tile.TileTypes.GrassRightLedge:
+					return Tile.TileTypes.Grass;
+				case Tile.TileTypes.GrassLeft:
+					return Tile.TileTypes.Dirt;
+				case Tile.TileTypes.Dirt:
+					return Tile.TileTypes.Dirt;
+				default:
+					return previousType;
+			}
+		} else {
+			switch(previousType) {
+				case Tile.TileTypes.GrassLeftLedge:
+					return Tile.TileTypes.Grass;
+				case Tile.TileTypes.GrassRight:
+					return Tile.TileTypes.Grass;
+				case Tile.TileTypes.GrassLeft:
+					return Tile.TileTypes.Dirt;
+				case Tile.TileTypes.Grass:
+					if(UnityEngine.Random.Range(0,5) == 0) {
+						return Tile.TileTypes.GrassLeft;
+					} else {
+						return Tile.TileTypes.Grass;
+					}
+				case Tile.TileTypes.Dirt:
+					if(UnityEngine.Random.Range(0,3) == 0) {
+						return Tile.TileTypes.GrassRight;
+					} else {
+						return Tile.TileTypes.Dirt;
+					}
+				default:
+					return previousType;
+			}
+		}
 	}
 }
