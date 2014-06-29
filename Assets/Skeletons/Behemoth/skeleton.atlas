@@ -1,0 +1,117 @@
+
+skeleton.png
+size: 1015,1013
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+rock_guy__0001_hand_right
+  rotate: true
+  xy: 167, 322
+  size: 329, 256
+  orig: 329, 256
+  offset: 0, 0
+  index: -1
+rock_guy__0002_arm_right_lower
+  rotate: true
+  xy: 674, 2
+  size: 116, 339
+  orig: 116, 339
+  offset: 0, 0
+  index: -1
+rock_guy__0006_leg_right_lower
+  rotate: false
+  xy: 2, 316
+  size: 163, 697
+  orig: 163, 697
+  offset: 0, 0
+  index: -1
+rock_guy__0007_leg_right_upper
+  rotate: false
+  xy: 167, 653
+  size: 186, 360
+  orig: 186, 360
+  offset: 0, 0
+  index: -1
+rock_guy__0008_foot_left
+  rotate: false
+  xy: 2, 3
+  size: 359, 311
+  orig: 359, 311
+  offset: 0, 0
+  index: -1
+rock_guy__0009_leg_left_lower
+  rotate: true
+  xy: 363, 790
+  size: 223, 626
+  orig: 223, 626
+  offset: 0, 0
+  index: -1
+rock_guy__0011_pelvis
+  rotate: false
+  xy: 363, 6
+  size: 309, 257
+  orig: 309, 257
+  offset: 0, 0
+  index: -1
+rock_guy__0012_chest
+  rotate: true
+  xy: 425, 265
+  size: 523, 585
+  orig: 523, 585
+  offset: 0, 0
+  index: -1
+rock_guy__0013_arm_left_upper
+  rotate: false
+  xy: 674, 120
+  size: 341, 143
+  orig: 341, 143
+  offset: 0, 0
+  index: -1
+
+skeleton2.png
+size: 1012,503
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+rock_guy__0003_arm_right_upper
+  rotate: false
+  xy: 2, 2
+  size: 289, 162
+  orig: 289, 162
+  offset: 0, 0
+  index: -1
+rock_guy__0004_head
+  rotate: true
+  xy: 703, 270
+  size: 233, 309
+  orig: 233, 309
+  offset: 0, 0
+  index: -1
+rock_guy__0005_foot_right
+  rotate: false
+  xy: 703, 17
+  size: 275, 251
+  orig: 275, 251
+  offset: 0, 0
+  index: -1
+rock_guy__0010_leg_left_upper
+  rotate: true
+  xy: 286, 188
+  size: 109, 415
+  orig: 109, 415
+  offset: 0, 0
+  index: -1
+rock_guy__0014_hand_left
+  rotate: true
+  xy: 2, 166
+  size: 337, 282
+  orig: 337, 282
+  offset: 0, 0
+  index: -1
+rock_guy__0015_arm_left_lower
+  rotate: true
+  xy: 286, 299
+  size: 204, 385
+  orig: 204, 385
+  offset: 0, 0
+  index: -1
