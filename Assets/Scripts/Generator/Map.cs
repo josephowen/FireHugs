@@ -4,12 +4,14 @@ using UnityEngine;
 public class Map : MonoBehaviour {
 	private const float tileSize = 64.0f/100.0f;
 
+	public string m_nextScene;
 	public Material m_material;
 	public int m_rows;
 	public int m_columns;
 	public int m_rockRow = 3;
 	public int m_groundRow = 6;
-
+	
+	private GameObject prefabsContainer;
 	public List<GameObject> prefabs;
 
 	private Dictionary<Tile.TileTypes, Texture2D> m_textureDictionary;
@@ -108,11 +110,13 @@ public class Map : MonoBehaviour {
 								m_map[c][r] = GenerateTile(nextType, c, r);
 
 								// if we have been stable for a while, place prefabs
+								prefabsContainer = prefabsContainer ?? new GameObject("Prefabs");
 								if(expanse > 4) {
 									Vector3 pos = m_map[c][r].transform.position;
 									pos.y += tileSize;
 									pos.x -= tileSize*2;
-									GameObject.Instantiate(prefabs[Random.Range(0,prefabs.Count-1)], pos, new Quaternion());
+									var go = GameObject.Instantiate(prefabs[Random.Range(0,prefabs.Count-1)], pos, new Quaternion()) as GameObject;
+									go.transform.parent = prefabsContainer.transform;
 									expanse = 0;
 								}
 							}
@@ -127,6 +131,14 @@ public class Map : MonoBehaviour {
 				}
 			}
 		}
+
+		// Endzone
+		var zone = new GameObject("Endzone");
+		zone.transform.position = new Vector3(m_columns*tileSize, m_rows*tileSize/2,0);
+		var col = zone.AddComponent<BoxCollider2D>();
+		col.size = new Vector3(5*tileSize, m_rows*tileSize, 0);
+		var endzone = zone.AddComponent<EndZone>();
+		endzone.m_targetScene = m_nextScene;
 	}
 
 	Tile GenerateTile(Tile.TileTypes type, int row, int col) {
