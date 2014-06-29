@@ -61,10 +61,18 @@ public class Map : MonoBehaviour {
 				}
 				// Generate baseline
 				if(r < m_rockRow) {
-					m_map[c][r] = GenerateTile(Tile.TileTypes.Rock, c, r);
+					if(Random.Range(0, r+1) == 0) {
+						m_map[c][r] = GenerateTile(Tile.TileTypes.Rock, c, r);
+					} else {
+						m_map[c][r] = GenerateTile(Tile.TileTypes.Ground, c, r);
+					}
 				}
 				else if(r < m_groundRow) {
-					m_map[c][r] = GenerateTile(Tile.TileTypes.Ground, c, r);
+					if(Random.Range(0, r*r) == 0) {
+						m_map[c][r] = GenerateTile(Tile.TileTypes.Rock, c, r);
+					} else {
+						m_map[c][r] = GenerateTile(Tile.TileTypes.Ground, c, r);
+					}
 				}
 				// Anything above baseline
 				else {
@@ -115,7 +123,7 @@ public class Map : MonoBehaviour {
 									Vector3 pos = m_map[c][r].transform.position;
 									pos.y += tileSize;
 									pos.x -= tileSize*2;
-									var go = GameObject.Instantiate(prefabs[Random.Range(0,prefabs.Count-1)], pos, new Quaternion()) as GameObject;
+									var go = GameObject.Instantiate(prefabs[Random.Range(0,prefabs.Count)], pos, new Quaternion()) as GameObject;
 									go.transform.parent = prefabsContainer.transform;
 									expanse = 0;
 								}
