@@ -5,16 +5,35 @@ public class FlockTarget : MonoBehaviour
 {
 	public Sprite sprite;
 
-	public FlockTarget ()
-	{
-	}
+	public int weight = -1;
 
 	void Start()
 	{
 		GetComponent<SpriteRenderer>().sprite = this.sprite;
 
+		getWeight();
+
 		//print (gameObject.transform.parent);
 		//print(gameObject.transform.childCount);
+	}
+
+	public int getWeight()
+	{
+		int totalWeight = 1;
+		foreach (Transform childTransform in transform)
+		{
+			if (childTransform.gameObject.GetComponent<FlockTarget>().weight == -1)
+			{
+				totalWeight += childTransform.gameObject.GetComponent<FlockTarget>().getWeight();
+			}
+			else
+			{
+				totalWeight += childTransform.gameObject.GetComponent<FlockTarget>().weight;
+			}
+		}
+
+		weight = totalWeight;
+		return totalWeight;
 	}
 
 

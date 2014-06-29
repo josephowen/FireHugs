@@ -10,10 +10,7 @@ public class FlockObject : MonoBehaviour
 	public float avoidForce;
 	public float distToSwitch;
 	public GameObject target = null;
-
-	public FlockObject ()
-	{
-	}
+	public FlockSkeleton flockSkeleton = null;
 
 	void Start() {
 		GetComponent<SpriteRenderer> ().sprite = this.sprites[Random.Range (0, this.sprites.Length)];
@@ -45,26 +42,43 @@ public class FlockObject : MonoBehaviour
 	{
 		//print("Choosing target");
 		List<GameObject> allTargets = new List<GameObject>();
+		List<int> weights = new List<int>();
+		int totalWeights = 0;
 		foreach (Transform child in target.transform)
 		{
 			allTargets.Add(child.gameObject);
+			int thisWeight = child.gameObject.GetComponent<FlockTarget>().weight;
+			weights.Add(thisWeight);
+			totalWeights += thisWeight;
 		}
+
+		totalWeights += 1;
 
 		if (target.transform.parent != null)
 		{
 			allTargets.Add(target.transform.parent.gameObject);
+			weights.Add(flockSkeleton.weight - totalWeights);
+			totalWeights += flockSkeleton.weight;
 		}
 
 		allTargets.Add(target);
+		weights.Add(1);
+
+
+		//int randWeight = Random.Range(0, totalWeights);
+		//int weightsSoFar = 0;
+		//for (int i=0; i<allTargets.Count; i++)
+		//{
+		//	weightsSoFar += weights[i];
+		//	if (weightsSoFar > randWeight)
+		//	{
+		//		target = allTargets[i];
+		//		return;
+		//	}
+		//}
 
 		int randomDecision = Random.Range(0, allTargets.Count);
 		target = allTargets[randomDecision];
-
-		//FlockTarget[] allTargets = FindObjectsOfType<FlockTarget>();
-		//int randomDecision = Random.Range(0, allTargets.Length);
-		////print(randomDecision);
-		//FlockTarget target = allTargets[randomDecision];
-		//return target;
 	}
 
 	void OnTriggerStay2D(Collider2D other)
