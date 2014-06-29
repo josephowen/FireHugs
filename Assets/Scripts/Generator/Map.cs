@@ -4,6 +4,7 @@ using UnityEngine;
 public class Map : MonoBehaviour {
 	private const float tileSize = 64.0f/100.0f;
 
+	public string m_nextScene;
 	public Material m_material;
 	public int m_rows;
 	public int m_columns;
@@ -130,6 +131,14 @@ public class Map : MonoBehaviour {
 				}
 			}
 		}
+
+		// Endzone
+		var zone = new GameObject("Endzone");
+		zone.transform.position = new Vector3(m_columns*tileSize, m_rows*tileSize/2,0);
+		var col = zone.AddComponent<BoxCollider2D>();
+		col.size = new Vector3(5*tileSize, m_rows*tileSize, 0);
+		var endzone = zone.AddComponent<EndZone>();
+		endzone.m_targetScene = m_nextScene;
 	}
 
 	Tile GenerateTile(Tile.TileTypes type, int row, int col) {

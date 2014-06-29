@@ -185,6 +185,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 48d84c2b50466d84aa42472a4daa4bdb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_nextScene: Level2
   m_material: {fileID: 10754, guid: 0000000000000000e000000000000000, type: 0}
   m_rows: 30
   m_columns: 100
