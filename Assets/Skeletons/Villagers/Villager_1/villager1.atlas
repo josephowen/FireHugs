@@ -1,0 +1,90 @@
+
+villager1.png
+size: 931,1013
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+v_1__0000_head
+  rotate: false
+  xy: 366, 709
+  size: 240, 304
+  orig: 240, 304
+  offset: 0, 0
+  index: -1
+v_1__0001_hand_forward
+  rotate: false
+  xy: 734, 915
+  size: 91, 98
+  orig: 91, 98
+  offset: 0, 0
+  index: -1
+v_1__0002_body
+  rotate: false
+  xy: 2, 458
+  size: 362, 555
+  orig: 362, 555
+  offset: 0, 0
+  index: -1
+v_1__0003_food_front
+  rotate: false
+  xy: 2, 88
+  size: 195, 121
+  orig: 195, 121
+  offset: 0, 0
+  index: -1
+v_1__0004_foot_behind
+  rotate: false
+  xy: 366, 612
+  size: 182, 95
+  orig: 182, 95
+  offset: 0, 0
+  index: -1
+v_1__0005_hand_back
+  rotate: false
+  xy: 199, 104
+  size: 103, 105
+  orig: 103, 105
+  offset: 0, 0
+  index: -1
+v_1__0006_$
+  rotate: false
+  xy: 608, 792
+  size: 81, 109
+  orig: 81, 109
+  offset: 0, 0
+  index: -1
+v_1__0006_rill
+  rotate: false
+  xy: 2, 211
+  size: 305, 245
+  orig: 305, 245
+  offset: 0, 0
+  index: -1
+v_1__0007_&
+  rotate: true
+  xy: 827, 931
+  size: 82, 104
+  orig: 82, 104
+  offset: 0, 0
+  index: -1
+v_1__0008_!
+  rotate: false
+  xy: 608, 903
+  size: 124, 110
+  orig: 124, 110
+  offset: 0, 0
+  index: -1
+v_1__0009__
+  rotate: false
+  xy: 366, 498
+  size: 114, 112
+  orig: 114, 112
+  offset: 0, 0
+  index: -1
+v_1__0010__
+  rotate: true
+  xy: 2, 2
+  size: 84, 137
+  orig: 84, 137
+  offset: 0, 0
+  index: -1

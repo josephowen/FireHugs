@@ -185,7 +185,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d0b603dc1d822a4ebe7304377839728, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_targetScene: Game
 --- !u!4 &1039492631
 Transform:
   m_ObjectHideFlags: 0
@@ -325,7 +324,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ebf0d5072facb0c43ae523c950bc3d01, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_texture: {fileID: 2800000, guid: e3698dd96ca725646b3ef7223e77ca4f, type: 3}
+  m_texture: {fileID: 2800000, guid: e104c1dbdaa957b479d752af189b44cb, type: 3}
   m_targetPosition: {x: 0, y: -2.5}
 --- !u!4 &1165443445
 Transform:
@@ -335,7 +334,7 @@ Transform:
   m_GameObject: {fileID: 1165443441}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: -7, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 7, y: .5, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 2

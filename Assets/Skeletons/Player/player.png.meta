@@ -1,0 +1,136 @@
+fileFormatVersion: 2
+guid: 321fe67ded49a4e4d8bae08048fa58f9
+TextureImporter:
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 1024
+  textureSettings:
+    filterMode: -1
+    aniso: 1
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: rock_guy__0001_hand_right
+      rect:
+        serializedVersion: 2
+        x: 167
+        y: 373
+        width: 256
+        height: 329
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: rock_guy__0002_arm_right_lower
+      rect:
+        serializedVersion: 2
+        x: 674
+        y: 906
+        width: 339
+        height: 116
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: rock_guy__0006_leg_right_lower
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 11
+        width: 163
+        height: 697
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: rock_guy__0007_leg_right_upper
+      rect:
+        serializedVersion: 2
+        x: 167
+        y: 11
+        width: 186
+        height: 360
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: rock_guy__0008_foot_left
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 710
+        width: 359
+        height: 311
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: rock_guy__0009_leg_left_lower
+      rect:
+        serializedVersion: 2
+        x: 363
+        y: 11
+        width: 626
+        height: 223
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: rock_guy__0011_pelvis
+      rect:
+        serializedVersion: 2
+        x: 363
+        y: 761
+        width: 309
+        height: 257
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: rock_guy__0012_chest
+      rect:
+        serializedVersion: 2
+        x: 425
+        y: 236
+        width: 585
+        height: 523
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: rock_guy__0013_arm_left_upper
+      rect:
+        serializedVersion: 2
+        x: 674
+        y: 761
+        width: 341
+        height: 143
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: 
+  userData: 

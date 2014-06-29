@@ -1,14 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 
 public class Map : MonoBehaviour {
+	private const float tileSize = 64.0f/100.0f;
 
 	public Material m_material;
 	public int m_rows;
 	public int m_columns;
 	public int m_rockRow = 3;
 	public int m_groundRow = 6;
+
+	public List<GameObject> prefabs;
 
 	private Dictionary<Tile.TileTypes, Texture2D> m_textureDictionary;
 
@@ -75,7 +77,8 @@ public class Map : MonoBehaviour {
 						Tile.TileTypes previousType = m_map[c-1][r].Type;
 						if(r == elevation) {
 							// Change elevation
-							if(UnityEngine.Random.Range(0,Math.Max(0,10-expanse)) == 0) {
+							if(Random.Range(0,Mathf.Max(0,10-expanse)) == 0) {
+								expanse = 0;
 								bool down = false;
 								if(elevation <= m_groundRow) {
 									elevation++;
@@ -84,7 +87,7 @@ public class Map : MonoBehaviour {
 									elevation--;
 									down = true;
 								} else {
-									down = UnityEngine.Random.Range(0,4) == 0;
+									down = Random.Range(0,4) == 0;
 									elevation += down ? -1 : 1;
 								}
 								if(down) {
@@ -99,8 +102,19 @@ public class Map : MonoBehaviour {
 							}
 							// Stay at current elevation
 							else {
+								expanse++;
+
 								Tile.TileTypes nextType = GetNextTileType(previousType, false, false);
 								m_map[c][r] = GenerateTile(nextType, c, r);
+
+								// if we have been stable for a while, place prefabs
+								if(expanse > 4) {
+									Vector3 pos = m_map[c][r].transform.position;
+									pos.y += tileSize;
+									pos.x -= tileSize*2;
+									GameObject.Instantiate(prefabs[Random.Range(0,prefabs.Count-1)], pos, new Quaternion());
+									expanse = 0;
+								}
 							}
 						} else if (m_map[c-1][r].Type == Tile.TileTypes.Ground){
 							m_map[c][r] = GenerateTile(Tile.TileTypes.Ground, c, r);
@@ -116,7 +130,6 @@ public class Map : MonoBehaviour {
 	}
 
 	Tile GenerateTile(Tile.TileTypes type, int row, int col) {
-		const float tileSize = 64.0f/100.0f;
 		var go = new GameObject();
 		var tile = go.AddComponent<Tile>();
 
@@ -133,8 +146,8 @@ public class Map : MonoBehaviour {
 	}
 
 	Tile.TileTypes GetRandomType() {
-		Array arr = Enum.GetValues(typeof(Tile.TileTypes));
-		int index = UnityEngine.Random.Range(0, arr.Length-1);
+		System.Array arr = System.Enum.GetValues(typeof(Tile.TileTypes));
+		int index = Random.Range(0, arr.Length-1);
 		return ((Tile.TileTypes[])arr)[index];
 	}
 
@@ -185,13 +198,13 @@ public class Map : MonoBehaviour {
 				case Tile.TileTypes.GrassLeft:
 					return Tile.TileTypes.Dirt;
 				case Tile.TileTypes.Grass:
-					if(UnityEngine.Random.Range(0,5) == 0) {
+					if(Random.Range(0,5) == 0) {
 						return Tile.TileTypes.GrassLeft;
 					} else {
 						return Tile.TileTypes.Grass;
 					}
 				case Tile.TileTypes.Dirt:
-					if(UnityEngine.Random.Range(0,3) == 0) {
+					if(Random.Range(0,3) == 0) {
 						return Tile.TileTypes.GrassRight;
 					} else {
 						return Tile.TileTypes.Dirt;
