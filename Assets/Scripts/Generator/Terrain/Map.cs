@@ -9,7 +9,8 @@ public class Map : MonoBehaviour {
 	public int m_columns;
 	public int m_rockRow = 3;
 	public int m_groundRow = 6;
-
+	
+	private GameObject prefabsContainer;
 	public List<GameObject> prefabs;
 
 	private Dictionary<Tile.TileTypes, Texture2D> m_textureDictionary;
@@ -108,11 +109,13 @@ public class Map : MonoBehaviour {
 								m_map[c][r] = GenerateTile(nextType, c, r);
 
 								// if we have been stable for a while, place prefabs
+								prefabsContainer = prefabsContainer ?? new GameObject("Prefabs");
 								if(expanse > 4) {
 									Vector3 pos = m_map[c][r].transform.position;
 									pos.y += tileSize;
 									pos.x -= tileSize*2;
-									GameObject.Instantiate(prefabs[Random.Range(0,prefabs.Count-1)], pos, new Quaternion());
+									var go = GameObject.Instantiate(prefabs[Random.Range(0,prefabs.Count-1)], pos, new Quaternion()) as GameObject;
+									go.transform.parent = prefabsContainer.transform;
 									expanse = 0;
 								}
 							}
