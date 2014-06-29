@@ -1,0 +1,62 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1011 &101100000
+AvatarMask:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: villager1.mask
+  m_Mask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+  m_Elements:
+  - m_Path: 
+    m_Weight: 1
+  - m_Path: root
+    m_Weight: 1
+  - m_Path: root/body
+    m_Weight: 1
+  - m_Path: root/body/foot_behind
+    m_Weight: 1
+  - m_Path: root/body/foot_behind/slot [v_1__0004_foot_behind]
+    m_Weight: 1
+  - m_Path: root/body/foot_front
+    m_Weight: 1
+  - m_Path: root/body/foot_front/slot [v_1__0003_foot_front]
+    m_Weight: 1
+  - m_Path: root/body/hand_back
+    m_Weight: 1
+  - m_Path: root/body/hand_back/slot [v_1__0005_hand_back]
+    m_Weight: 1
+  - m_Path: root/body/hand_front
+    m_Weight: 1
+  - m_Path: root/body/hand_front/slot [v_1__0001_hand_forward]
+    m_Weight: 1
+  - m_Path: root/body/head
+    m_Weight: 1
+  - m_Path: root/body/head/!
+    m_Weight: 1
+  - m_Path: root/body/head/!/slot [v_1__0008_!]
+    m_Weight: 1
+  - m_Path: root/body/head/$
+    m_Weight: 1
+  - m_Path: root/body/head/$/slot [v_1__0006_$]
+    m_Weight: 1
+  - m_Path: root/body/head/&
+    m_Weight: 1
+  - m_Path: root/body/head/&/slot [v_1__0007_&]
+    m_Weight: 1
+  - m_Path: root/body/head/*
+    m_Weight: 1
+  - m_Path: root/body/head/*/slot [v_1__0009_*]
+    m_Weight: 1
+  - m_Path: root/body/head/?
+    m_Weight: 1
+  - m_Path: root/body/head/?/slot [v_1__0010_?]
+    m_Weight: 1
+  - m_Path: root/body/head/rill
+    m_Weight: 1
+  - m_Path: root/body/head/rill/slot [v_1__0006_rill]
+    m_Weight: 1
+  - m_Path: root/body/head/slot [v_1__0000_head]
+    m_Weight: 1
+  - m_Path: root/body/slot [v_1__0002_body]
+    m_Weight: 1

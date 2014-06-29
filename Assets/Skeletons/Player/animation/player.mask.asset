@@ -1,0 +1,74 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1011 &101100000
+AvatarMask:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: player.mask
+  m_Mask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+  m_Elements:
+  - m_Path: 
+    m_Weight: 1
+  - m_Path: root
+    m_Weight: 1
+  - m_Path: root/pelvis
+    m_Weight: 1
+  - m_Path: root/pelvis/chest
+    m_Weight: 1
+  - m_Path: root/pelvis/chest/head
+    m_Weight: 1
+  - m_Path: root/pelvis/chest/head/slot [rock_guy__0004_head]
+    m_Weight: 1
+  - m_Path: root/pelvis/chest/l_arm_upper
+    m_Weight: 1
+  - m_Path: root/pelvis/chest/l_arm_upper/l_arm_lower
+    m_Weight: 1
+  - m_Path: root/pelvis/chest/l_arm_upper/l_arm_lower/l_hand
+    m_Weight: 1
+  - m_Path: root/pelvis/chest/l_arm_upper/l_arm_lower/l_hand/slot [rock_guy__0014_hand_left]
+    m_Weight: 1
+  - m_Path: root/pelvis/chest/l_arm_upper/l_arm_lower/slot [rock_guy__0015_arm_left_lower]
+    m_Weight: 1
+  - m_Path: root/pelvis/chest/l_arm_upper/slot [rock_guy__0013_arm_left_upper]
+    m_Weight: 1
+  - m_Path: root/pelvis/chest/r_arm_upper
+    m_Weight: 1
+  - m_Path: root/pelvis/chest/r_arm_upper/r_arm_lower
+    m_Weight: 1
+  - m_Path: root/pelvis/chest/r_arm_upper/r_arm_lower/r_hand
+    m_Weight: 1
+  - m_Path: root/pelvis/chest/r_arm_upper/r_arm_lower/r_hand/slot [rock_guy__0001_hand_right]
+    m_Weight: 1
+  - m_Path: root/pelvis/chest/r_arm_upper/r_arm_lower/slot [rock_guy__0002_arm_right_lower]
+    m_Weight: 1
+  - m_Path: root/pelvis/chest/r_arm_upper/slot [rock_guy__0003_arm_right_upper]
+    m_Weight: 1
+  - m_Path: root/pelvis/chest/slot [rock_guy__0012_chest]
+    m_Weight: 1
+  - m_Path: root/pelvis/l_leg_upper
+    m_Weight: 1
+  - m_Path: root/pelvis/l_leg_upper/l_leg_lower
+    m_Weight: 1
+  - m_Path: root/pelvis/l_leg_upper/l_leg_lower/l_foot
+    m_Weight: 1
+  - m_Path: root/pelvis/l_leg_upper/l_leg_lower/l_foot/slot [rock_guy__0008_foot_left]
+    m_Weight: 1
+  - m_Path: root/pelvis/l_leg_upper/l_leg_lower/slot [rock_guy__0009_leg_left_lower]
+    m_Weight: 1
+  - m_Path: root/pelvis/l_leg_upper/slot [rock_guy__0010_leg_left_upper]
+    m_Weight: 1
+  - m_Path: root/pelvis/r_leg_upper
+    m_Weight: 1
+  - m_Path: root/pelvis/r_leg_upper/r_leg_lower
+    m_Weight: 1
+  - m_Path: root/pelvis/r_leg_upper/r_leg_lower/r_foot
+    m_Weight: 1
+  - m_Path: root/pelvis/r_leg_upper/r_leg_lower/r_foot/slot [rock_guy__0005_foot_right]
+    m_Weight: 1
+  - m_Path: root/pelvis/r_leg_upper/r_leg_lower/slot [rock_guy__0006_leg_right_lower]
+    m_Weight: 1
+  - m_Path: root/pelvis/r_leg_upper/slot [rock_guy__0007_leg_right_upper]
+    m_Weight: 1
+  - m_Path: root/pelvis/slot [rock_guy__0011_pelvis]
+    m_Weight: 1
