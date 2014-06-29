@@ -7,14 +7,12 @@ using System.Collections.Generic;
 [CustomEditor(typeof(Map))]
 public class MapEditor : Editor {
 
+	private bool foldout = false;
+
 	public override void OnInspectorGUI() {
+		DrawDefaultInspector();
+
 		Map map = (Map) target;
-		
-		map.m_rows = EditorGUILayout.IntField("Rows", map.m_rows);
-		map.m_columns = EditorGUILayout.IntField("Columns", map.m_columns);
-		map.m_rockRow = EditorGUILayout.IntField("Rock Row", map.m_rockRow);
-		map.m_groundRow = EditorGUILayout.IntField("Dirt Row", map.m_groundRow);
-		map.m_material = (Material)EditorGUILayout.ObjectField("Material", map.m_material, typeof(Material), false, null);
 
 		List<Tile.TileTypes> types = map.Types;
 		List<Texture2D> textures = map.Textures;
@@ -30,13 +28,28 @@ public class MapEditor : Editor {
 				textures.Add(null);
 			}
 		}
-		
-		for(int i = 0; i < types.Count; i++) {
-			textures[i] = (Texture2D)EditorGUILayout.ObjectField(types[i].ToString(), textures[i], typeof(Texture2D), false, null);
+
+		foldout = Foldout(foldout, "Tiles", true, EditorStyles.foldout);
+		if(foldout) {
+			for(int i = 0; i < types.Count; i++) {
+				textures[i] = (Texture2D)EditorGUILayout.ObjectField(types[i].ToString(), textures[i], typeof(Texture2D), false, null);
+			}
 		}
 
 		map.Types = types;
 		map.Textures = textures;
+	}
+	
+	public static bool Foldout(bool foldout, GUIContent content, bool toggleOnLabelClick, GUIStyle style)
+	{
+		Rect position = GUILayoutUtility.GetRect(40f, 40f, 16f, 16f, style);
+		// EditorGUI.kNumberW == 40f but is internal
+		return EditorGUI.Foldout(position, foldout, content, toggleOnLabelClick, style);
+	}
+	
+	public static bool Foldout(bool foldout, string content, bool toggleOnLabelClick, GUIStyle style)
+	{
+		return Foldout(foldout, new GUIContent(content), toggleOnLabelClick, style);
 	}
 }
 #endif
