@@ -61,10 +61,18 @@ public class Map : MonoBehaviour {
 				}
 				// Generate baseline
 				if(r < m_rockRow) {
-					m_map[c][r] = GenerateTile(Tile.TileTypes.Rock, c, r);
+					if(Random.Range(0, r+1) == 0) {
+						m_map[c][r] = GenerateTile(Tile.TileTypes.Rock, c, r);
+					} else {
+						m_map[c][r] = GenerateTile(Tile.TileTypes.Ground, c, r);
+					}
 				}
 				else if(r < m_groundRow) {
-					m_map[c][r] = GenerateTile(Tile.TileTypes.Ground, c, r);
+					if(Random.Range(0, r*r) == 0) {
+						m_map[c][r] = GenerateTile(Tile.TileTypes.Rock, c, r);
+					} else {
+						m_map[c][r] = GenerateTile(Tile.TileTypes.Ground, c, r);
+					}
 				}
 				// Anything above baseline
 				else {
