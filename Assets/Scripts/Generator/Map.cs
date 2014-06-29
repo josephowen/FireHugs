@@ -115,7 +115,7 @@ public class Map : MonoBehaviour {
 									Vector3 pos = m_map[c][r].transform.position;
 									pos.y += tileSize;
 									pos.x -= tileSize*2;
-									var go = GameObject.Instantiate(prefabs[Random.Range(0,prefabs.Count-1)], pos, new Quaternion()) as GameObject;
+									var go = GameObject.Instantiate(prefabs[Random.Range(0,prefabs.Count)], pos, new Quaternion()) as GameObject;
 									go.transform.parent = prefabsContainer.transform;
 									expanse = 0;
 								}

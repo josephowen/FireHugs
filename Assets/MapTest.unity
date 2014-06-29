@@ -193,6 +193,8 @@ MonoBehaviour:
   m_groundRow: 6
   prefabs:
   - {fileID: 100052, guid: 976bb7ffdad571844903729fa299c110, type: 2}
+  - {fileID: 100066, guid: f2614b5ac3011bc4ead1deda4a1d0f96, type: 2}
+  - {fileID: 100002, guid: 2bf8045758d78484eaa8af8632b4feb2, type: 2}
   m_types: 000000000100000002000000030000000400000005000000060000000700000008000000
   m_textures:
   - {fileID: 0}
