@@ -6,7 +6,7 @@
 	{ "name": "l_leg_upper", "parent": "pelvis", "length": 295.29, "x": -41.83, "y": 117.27, "rotation": -179.28 },
 	{ "name": "r_leg_upper", "parent": "pelvis", "length": 264.21, "x": -28.17, "y": -82.68, "rotation": -159.72 },
 	{ "name": "head", "parent": "chest", "length": 174.88, "x": 413.18, "y": 0.51 },
-	{ "name": "l_arm_upper", "parent": "chest", "length": 400.25, "x": 390.11, "y": 151.99, "scaleX": 0.65, "rotation": 94.5 },
+	{ "name": "l_arm_upper", "parent": "chest", "length": 400.25, "x": 390.11, "y": 151.99, "rotation": 94.5 },
 	{ "name": "l_leg_lower", "parent": "l_leg_upper", "length": 516.91, "x": 330.19, "y": -2.59, "rotation": -12.86 },
 	{ "name": "r_arm_upper", "parent": "chest", "length": 273.95, "x": 369.51, "y": -150.95, "rotation": -91.81 },
 	{ "name": "r_leg_lower", "parent": "r_leg_upper", "length": 531.65, "x": 308.18, "y": -7.46, "rotation": -23.79 },
@@ -73,7 +73,7 @@
 			"rock_guy__0012_chest": { "x": 182.54, "y": -23.59, "rotation": -87.29, "width": 523, "height": 585 }
 		},
 		"rock_guy__0013_arm_left_upper": {
-			"rock_guy__0013_arm_left_upper": { "x": 287.71, "y": 10.9, "scaleX": 1.536, "rotation": 178.2, "width": 341, "height": 143 }
+			"rock_guy__0013_arm_left_upper": { "x": 287.71, "y": 10.9, "rotation": 178.2, "width": 341, "height": 143 }
 		},
 		"rock_guy__0014_hand_left": {
 			"rock_guy__0014_hand_left": { "x": 112.23, "y": 10.2, "rotation": 90.15, "width": 337, "height": 282 }
@@ -136,6 +136,9 @@
 					{ "time": 0.8, "angle": 7.84 },
 					{ "time": 0.9666, "angle": -15.23 },
 					{ "time": 1.3333, "angle": 9.63 }
+				],
+				"scale": [
+					{ "time": 0, "x": 1, "y": 1 }
 				]
 			},
 			"l_arm_upper": {
@@ -145,6 +148,9 @@
 					{ "time": 0.6666, "angle": 0 },
 					{ "time": 1, "angle": -29.16 },
 					{ "time": 1.3333, "angle": 0 }
+				],
+				"scale": [
+					{ "time": 0, "x": 1, "y": 1 }
 				]
 			},
 			"r_arm_upper": {
@@ -163,11 +169,17 @@
 					{ "time": 0.6666, "angle": 8.8 },
 					{ "time": 1, "angle": 37.61 },
 					{ "time": 1.3333, "angle": 8.8 }
+				],
+				"scale": [
+					{ "time": 0, "x": 0.463, "y": 1 }
 				]
 			},
 			"l_hand": {
 				"rotate": [
 					{ "time": 0, "angle": -12.82 }
+				],
+				"scale": [
+					{ "time": 0, "x": 1, "y": 1 }
 				]
 			},
 			"r_arm_lower": {
@@ -205,6 +217,9 @@
 					{ "time": 0.6666, "x": 5.25, "y": -56.92 },
 					{ "time": 1, "x": 42.37, "y": -26.95 },
 					{ "time": 1.3333, "x": 5.25, "y": -56.92 }
+				],
+				"scale": [
+					{ "time": 0, "x": 1, "y": 1 }
 				]
 			},
 			"l_foot": {
@@ -215,6 +230,9 @@
 					{ "time": 0.6, "angle": 7.08 },
 					{ "time": 1, "angle": -6.69 },
 					{ "time": 1.3333, "angle": 11.47 }
+				],
+				"scale": [
+					{ "time": 0, "x": 1, "y": 1 }
 				]
 			}
 		}
