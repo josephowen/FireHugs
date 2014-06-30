@@ -1076,7 +1076,7 @@ Transform:
   m_GameObject: {fileID: 100074}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: .200000003, y: .200000003, z: .200000003}
   m_Children:
   - {fileID: 400072}
   m_Father: {fileID: 0}
@@ -1195,31 +1195,7 @@ MonoBehaviour:
       attachments:
       - name: v_1__0010__
         gameObject: {fileID: 100000}
-  skins:
-  - name: Walk
-    slots:
-    - name: 
-      gameObject: {fileID: 0}
-      attachments: []
-    - name: 
-      gameObject: {fileID: 0}
-      attachments: []
-    - name: 
-      gameObject: {fileID: 0}
-      attachments: []
-    - name: 
-      gameObject: {fileID: 0}
-      attachments: []
-    - name: 
-      gameObject: {fileID: 0}
-      attachments: []
-    - name: 
-      gameObject: {fileID: 0}
-      attachments: []
-  - name: 
-    slots: []
-  - name: 
-    slots: []
+  skins: []
   slots:
   - name: v_1__0004_foot_behind
     bone: foot_behind
@@ -1342,8 +1318,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1951ee6acbecf4bad9a0761fcabcb246, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  walkSpeed: 7
-  runSpeed: 20
+  walkSpeed: 2
+  runSpeed: 7
 --- !u!212 &21200000
 SpriteRenderer:
   m_ObjectHideFlags: 1

@@ -9,11 +9,11 @@ GameObject:
   m_Component:
   - 4: {fileID: 400000}
   - 212: {fileID: 21200000}
-  - 114: {fileID: 11400000}
   - 50: {fileID: 5000000}
   - 58: {fileID: 5800000}
+  - 114: {fileID: 11400000}
   m_Layer: 0
-  m_Name: FlockObject
+  m_Name: FlockingObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -65,22 +65,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 100000}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 42836b746655bd043b7e8a990a264a68, type: 3}
+  m_Script: {fileID: 11500000, guid: 9a006b90e745645e29f4e5a7c9717010, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 4
-  sprites:
-  - {fileID: 21300000, guid: 9b1cc242c4a324249a43b76b01623b63, type: 3}
-  - {fileID: 21300000, guid: 200c8eff1ec90e3429a672516beeec66, type: 3}
-  - {fileID: 21300000, guid: 9642a6c71b6482b4981fa1c4a871236c, type: 3}
-  - {fileID: 21300000, guid: b8c1de4fddf98dc42a3ed48dafae0357, type: 3}
-  - {fileID: 21300000, guid: a80f9ebca5c13c34099be3ef524e1c30, type: 3}
-  - {fileID: 21300000, guid: ff183c56c287949b980498f5872ae465, type: 3}
-  - {fileID: 21300000, guid: 35322019b6725481e82917419dd896e2, type: 3}
-  - {fileID: 21300000, guid: c48af596866f54b13b78c6fc8221f224, type: 3}
-  - {fileID: 21300000, guid: b098fb67ffef94fc5a7007588e533207, type: 3}
-  - {fileID: 21300000, guid: 5a2ac09842a214750b64654947a50109, type: 3}
-  - {fileID: 21300000, guid: 755d92e12cbf74d1b9aba66ea79b5428, type: 3}
+  moveSpeed: .5
   randomCutoff: .0399999991
   avoidForce: 1
   distToSwitch: 1

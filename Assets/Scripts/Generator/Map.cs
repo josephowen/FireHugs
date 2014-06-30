@@ -149,14 +149,14 @@ public class Map : MonoBehaviour {
 		endzone.m_targetScene = m_nextScene;
 	}
 
-	Tile GenerateTile(Tile.TileTypes type, int col, int row) {
+	Tile GenerateTile(Tile.TileTypes type, int row, int col) {
 		var go = new GameObject();
 		var tile = go.AddComponent<Tile>();
 
 		tile.Type = type;
 		tile.Texture = m_textureDictionary[tile.Type];
 		tile.Material = m_material;
-		m_map[col][row] = tile;
+		m_map[row][col] = tile;
 
 		go.transform.parent = m_gameObjectRow[row].transform;
 		go.transform.position = new Vector2(row*tileSize, col*tileSize);

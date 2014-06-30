@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
 public class Unfreezer : MonoBehaviour {
@@ -7,6 +7,7 @@ public class Unfreezer : MonoBehaviour {
 		if(col.tag == "Player") {
 			rigidbody2D.isKinematic = false;
 			collider2D.isTrigger = false;
+			gameObject.AddComponent("FlockingObject");
 		}
 	}
 }

@@ -2,32 +2,38 @@ using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 
-public class FlockObjecta : MonoBehaviour
+public class FlockingObject : MonoBehaviour
 {
 	public float moveSpeed = 0.5f;
-	public Sprite[] sprites;
-	public float randomCutoff;
-	public float avoidForce;
-	public float distToSwitch;
-	public float distToAttach;
+	public float randomCutoff = 0.04f;
+	public float avoidForce = 1f;
+	public float distToSwitch = 1f;
+	public float distToAttach = 3f;
 	public FlockTarget target = null;
 	public FlockSkeleton flockSkeleton = null;
+	
+	private GameObject player;
 
 	void Start() {
-		collider2D.enabled = false;
-		GetComponent<SpriteRenderer> ().sprite = this.sprites[Random.Range (0, this.sprites.Length)];
-		chooseRandomTarget();
+		player = GameObject.Find("Player");
+		flockSkeleton = player.GetComponentInChildren<FlockSkeleton>();
 		transform.parent = flockSkeleton.transform;
+		chooseRandomTarget();
+		collider2D.enabled = false;
+		rigidbody2D.gravityScale = 0f;
+		rigidbody2D.drag = 2f;
 	}
 
 	void Update()
 	{
-		if ((transform.position - target.transform.position).magnitude < distToAttach)
+		var scale = player.transform.localScale.x;
+		
+		if ((transform.position - target.transform.position).magnitude < distToAttach * scale)
 		{
 			transform.parent = target.transform;
 		}
 
-		if ((Random.Range(0f, 1f) < randomCutoff) && (transform.position - target.transform.position).magnitude < distToSwitch)
+		if ((Random.Range(0f, 1f) < randomCutoff) && (transform.position - target.transform.position).magnitude < distToSwitch * scale)
 		{
 			chooseTarget();
 			transform.parent = target.transform;
@@ -50,18 +56,6 @@ public class FlockObjecta : MonoBehaviour
 	{
 		int randomDecision = Random.Range(0, target.GetComponent<FlockTarget>().nextOptions.Length);
 		target = target.GetComponent<FlockTarget>().nextOptions[randomDecision];
-	}
-
-	void OnTriggerStay2D(Collider2D other)
-	{
-		if (other.transform.parent != transform.parent)
-			return;
-
-		Vector2 diff = transform.position - other.gameObject.transform.position;
-		float magOrig = diff.magnitude;
-		float mag = ((CircleCollider2D)other).radius * 2 - magOrig;
-
-		gameObject.rigidbody2D.AddForce(avoidForce * mag * diff/magOrig);
 	}
 }
 
