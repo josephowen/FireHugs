@@ -14,6 +14,7 @@ public class FlockObject : MonoBehaviour
 	public FlockSkeleton flockSkeleton = null;
 
 	void Start() {
+		collider2D.enabled = false;
 		GetComponent<SpriteRenderer> ().sprite = this.sprites[Random.Range (0, this.sprites.Length)];
 		chooseRandomTarget();
 		transform.parent = flockSkeleton.transform;
