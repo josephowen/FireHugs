@@ -9,7 +9,7 @@ public class FlockSkeleton : MonoBehaviour {
 
 		foreach (Renderer renderer in renderers)
 		{
-			//renderer.enabled = false;
+			renderer.enabled = false;
 		}
 	}
 	

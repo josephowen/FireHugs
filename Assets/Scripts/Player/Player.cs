@@ -3,7 +3,7 @@ using System.Collections;
 
 public class Player : MonoBehaviour {
 	
-	public float speed = 5.0f;
+	public float speed = 5f;
 
 	// Use this for initialization
 	void Start () {
@@ -14,7 +14,9 @@ public class Player : MonoBehaviour {
 	void Update () {
 		var dx = Input.GetAxis("Horizontal");
 		
-		transform.Translate(new Vector3(1,0,0) * speed * dx * Time.deltaTime);
+		var vel = rigidbody2D.velocity;
+		vel.x = dx * speed;
+		rigidbody2D.velocity = vel;
 		
 		var dy = Input.GetAxis("Vertical");
 		
@@ -26,7 +28,7 @@ public class Player : MonoBehaviour {
 	}
 	
 	void Jump() {
-		rigidbody2D.AddForce(Vector3.up * 50f);
+		rigidbody2D.AddForce(Vector3.up * 70f * rigidbody2D.mass);
 	}
 	
 	bool IsGrounded() {
@@ -35,9 +37,10 @@ public class Player : MonoBehaviour {
 	
 	void updateScale() {
 		var numObjects = gameObject.GetComponentsInChildren<FlockingObject>().Length;
-		var scaleRatio = 0.05f;
+		var baseScale = 0.05f;
+		var scaleRatio = 0.02f;
 		
-		var scaleFactor = scaleRatio * Mathf.Sqrt(numObjects);
+		var scaleFactor = baseScale + scaleRatio * Mathf.Sqrt(numObjects);
 		
 		var scale = transform.localScale;
 		scale.x = scaleFactor;
@@ -50,5 +53,7 @@ public class Player : MonoBehaviour {
 			scale.y = scaleRatio / scaleFactor;
 			target.transform.localScale = scale;
 		}
+		
+		rigidbody2D.mass = numObjects * 1f;
 	}
 }

@@ -4,13 +4,14 @@ using System.Collections.Generic;
 
 public class FlockingObject : MonoBehaviour
 {
-	public float moveSpeed = 0.5f;
+	public float moveSpeed = 0.1f;
 	public float randomCutoff = 0.04f;
 	public float avoidForce = 1f;
 	public float distToSwitch = 1f;
 	public float distToAttach = 3f;
 	public FlockTarget target = null;
 	public FlockSkeleton flockSkeleton = null;
+	public float angularVelocity = 0f;
 	
 	private GameObject player;
 
@@ -20,8 +21,8 @@ public class FlockingObject : MonoBehaviour
 		transform.parent = flockSkeleton.transform;
 		chooseRandomTarget();
 		collider2D.enabled = false;
-		rigidbody2D.gravityScale = 0f;
-		rigidbody2D.drag = 2f;
+		angularVelocity = Random.Range(-240f, 240f);
+		Destroy(rigidbody2D);
 	}
 
 	void Update()
@@ -37,17 +38,16 @@ public class FlockingObject : MonoBehaviour
 		{
 			chooseTarget();
 			transform.parent = target.transform;
-			gameObject.rigidbody2D.AddTorque(Random.Range(-20f,20f));
 		}
 
 		Vector3 targetPos = target.transform.position;
-		gameObject.rigidbody2D.AddForce(moveSpeed*(targetPos - transform.position));
+		transform.position = Vector2.MoveTowards(transform.position, targetPos, moveSpeed * scale);
+		transform.Rotate(new Vector3(0, 0, angularVelocity * Time.deltaTime));
 	}
 
 	void chooseRandomTarget()
 	{
 		FlockTarget[] allTargets = flockSkeleton.transform.parent.GetComponentsInChildren<FlockTarget>();
-		//print(allTargets.Length);
 		target = allTargets[Random.Range(0, allTargets.Length)];
 		transform.parent = target.transform;
 	}
