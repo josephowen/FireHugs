@@ -46,12 +46,9 @@ public class Villager : MonoBehaviour {
 	}
 	
 	void Move (float speed) {
-		Debug.Log(runSpeed);
-		if (speed < 0 && transform.localScale.x < 0) {
-			transform.localScale = new Vector3(1, 1, 1);
-		}
-		else if (speed > 0 && transform.localScale.x > 0) {
-			transform.localScale = new Vector3(-1, 1, 1);
+		var scale = transform.localScale;
+		if ((speed < 0 && scale.x < 0) || (speed > 0 && scale.x > 0)) {
+			transform.localScale = new Vector3(-scale.x, scale.y, scale.z);
 		}
 		transform.Translate(new Vector3(1,0,0) * speed * Time.deltaTime);
 	}
