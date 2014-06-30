@@ -93,7 +93,7 @@ public class Map : MonoBehaviour {
 								if(elevation <= m_groundRow) {
 									elevation++;
 									down = false;
-								} else if (elevation >= m_rows) {
+								} else if (elevation >= m_rows-1) {
 									elevation--;
 									down = true;
 								} else {
@@ -156,6 +156,7 @@ public class Map : MonoBehaviour {
 		tile.Type = type;
 		tile.Texture = m_textureDictionary[tile.Type];
 		tile.Material = m_material;
+		Debug.Log(m_map.Length + " " + m_map[row].Length + " " + row + " " + col);
 		m_map[row][col] = tile;
 
 		go.transform.parent = m_gameObjectRow[row].transform;
