@@ -2,21 +2,23 @@ using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 
-public class FlockObjecta : MonoBehaviour
+public class FlockingObject : MonoBehaviour
 {
 	public float moveSpeed = 0.5f;
-	public Sprite[] sprites;
-	public float randomCutoff;
-	public float avoidForce;
-	public float distToSwitch;
-	public float distToAttach;
+	public float randomCutoff = 0.04f;
+	public float avoidForce = 1f;
+	public float distToSwitch = 1f;
+	public float distToAttach = 3f;
 	public FlockTarget target = null;
 	public FlockSkeleton flockSkeleton = null;
 
 	void Start() {
-		GetComponent<SpriteRenderer> ().sprite = this.sprites[Random.Range (0, this.sprites.Length)];
-		chooseRandomTarget();
+		flockSkeleton = GameObject.Find("Player").GetComponentInChildren<FlockSkeleton>();
 		transform.parent = flockSkeleton.transform;
+		chooseRandomTarget();
+		collider2D.enabled = false;
+		rigidbody2D.gravityScale = 0f;
+		rigidbody2D.drag = 2f;
 	}
 
 	void Update()

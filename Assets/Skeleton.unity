@@ -494,7 +494,7 @@ Animator:
   m_GameObject: {fileID: 186653803}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: f645b1d89c2774b65840dde7430e0529, type: 2}
-  m_Controller: {fileID: 9100000, guid: af6e29dd9cdf048cbb81f0b324dc0099, type: 2}
+  m_Controller: {fileID: 0}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 1
@@ -2266,7 +2266,7 @@ Transform:
   m_PrefabParentObject: {fileID: 400074, guid: 5480ac7ece64348b6909953ff07252a2, type: 2}
   m_PrefabInternal: {fileID: 228963369}
   m_GameObject: {fileID: 1260047980}
-  m_LocalRotation: {x: 0, y: 0, z: -.718186975, w: .695850134}
+  m_LocalRotation: {x: 0, y: 0, z: -.718187034, w: .695850194}
   m_LocalPosition: {x: 3.69510007, y: -1.50949991, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -2363,7 +2363,7 @@ Transform:
   m_PrefabParentObject: {fileID: 400066, guid: 5480ac7ece64348b6909953ff07252a2, type: 2}
   m_PrefabInternal: {fileID: 228963369}
   m_GameObject: {fileID: 1289683947}
-  m_LocalRotation: {x: 0, y: 0, z: -.669778824, w: .742560625}
+  m_LocalRotation: {x: 0, y: 0, z: -.669778883, w: .742560685}
   m_LocalPosition: {x: 2.74950004, y: -.134199992, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -2664,7 +2664,7 @@ Transform:
   m_GameObject: {fileID: 1464819517}
   m_LocalRotation: {x: 0, y: 0, z: .554408729, w: .832244515}
   m_LocalPosition: {x: 4.39839983, y: .132799998, z: 0}
-  m_LocalScale: {x: 1.53600001, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1422707469}
   - {fileID: 1555242281}
@@ -3342,7 +3342,7 @@ Transform:
   m_GameObject: {fileID: 1785671391}
   m_LocalRotation: {x: 0, y: 0, z: .734322488, w: .678800762}
   m_LocalPosition: {x: 3.90109968, y: 1.51989996, z: 0}
-  m_LocalScale: {x: .649999976, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1464819518}
   - {fileID: 2060181867}
@@ -3428,7 +3428,7 @@ Transform:
   m_GameObject: {fileID: 1814640119}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 13.0898676, y: .461386681, z: -46.8276367}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: .200000003, y: .200000003, z: .200000003}
   m_Children:
   - {fileID: 277340302}
   m_Father: {fileID: 0}
@@ -3445,8 +3445,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1951ee6acbecf4bad9a0761fcabcb246, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  walkSpeed: 7
-  runSpeed: 20
+  walkSpeed: 2
+  runSpeed: 7
 --- !u!61 &1814640122
 BoxCollider2D:
   m_ObjectHideFlags: 0
