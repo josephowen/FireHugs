@@ -17,7 +17,7 @@ public class FlockObjectCreator : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (Input.GetMouseButtonDown(0))
+		if (Input.GetMouseButtonDown(1))
 		{
 			Vector3 pos = Input.mousePosition;
 			pos.z = transform.position.z - Camera.main.transform.position.z;
