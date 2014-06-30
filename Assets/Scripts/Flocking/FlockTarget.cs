@@ -1,41 +1,58 @@
 using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class FlockTarget : MonoBehaviour
 {
 	public Sprite sprite;
-
-	public int weight = -1;
+	public FlockTarget[] nextOptions;
 
 	void Start()
 	{
 		GetComponent<SpriteRenderer>().sprite = this.sprite;
 
-		getWeight();
+		computeNextOptions();
 
 		//print (gameObject.transform.parent);
 		//print(gameObject.transform.childCount);
 	}
 
-	public int getWeight()
+	void computeNextOptions()
 	{
-		int totalWeight = 1;
-		foreach (Transform childTransform in transform)
+		List<FlockTarget> allTargets = new List<FlockTarget>();
+		foreach (Transform child in transform.parent)
 		{
-			if (childTransform.gameObject.GetComponent<FlockTarget>().weight == -1)
+			foreach (Transform childTargetTransform in child.transform)
 			{
-				totalWeight += childTransform.gameObject.GetComponent<FlockTarget>().getWeight();
-			}
-			else
-			{
-				totalWeight += childTransform.gameObject.GetComponent<FlockTarget>().weight;
+				FlockTarget childTarget = childTargetTransform.GetComponent<FlockTarget>();
+				if (childTarget != null)
+				{
+					allTargets.Add(childTarget);
+				}
 			}
 		}
 
-		weight = totalWeight;
-		return totalWeight;
-	}
+		if (transform.parent.parent != null)
+		{
+			foreach (Transform parentTargetTransform in transform.parent.parent.transform)
+			{
+				FlockTarget parentTarget = parentTargetTransform.GetComponent<FlockTarget>();
+				if (parentTarget != null)
+				{
+					allTargets.Add(parentTarget);
+				}
+			}
+		}
 
+		allTargets.Add(this);
+
+		nextOptions = new FlockTarget[allTargets.Count];
+
+		for (int i = 0; i < allTargets.Count; i++)
+		{
+			nextOptions[i] = allTargets[i];
+		}
+	}
 
 	void Update()
 	{
