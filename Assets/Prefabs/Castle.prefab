@@ -14,7 +14,7 @@ GameObject:
   - 61: {fileID: 6100000}
   m_Layer: 0
   m_Name: Rock3
-  m_TagString: Untagged
+  m_TagString: Rock
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -33,7 +33,7 @@ GameObject:
   - 61: {fileID: 6100002}
   m_Layer: 0
   m_Name: Rock2
-  m_TagString: Untagged
+  m_TagString: Rock
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -52,7 +52,7 @@ GameObject:
   - 61: {fileID: 6100004}
   m_Layer: 0
   m_Name: Rock1
-  m_TagString: Untagged
+  m_TagString: Rock
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -101,7 +101,7 @@ GameObject:
   - 61: {fileID: 6100006}
   m_Layer: 0
   m_Name: Rock1
-  m_TagString: Untagged
+  m_TagString: Rock
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -120,7 +120,7 @@ GameObject:
   - 61: {fileID: 6100008}
   m_Layer: 0
   m_Name: Rock2
-  m_TagString: Untagged
+  m_TagString: Rock
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -139,7 +139,7 @@ GameObject:
   - 61: {fileID: 6100010}
   m_Layer: 0
   m_Name: Rock2
-  m_TagString: Untagged
+  m_TagString: Rock
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -158,7 +158,7 @@ GameObject:
   - 61: {fileID: 6100012}
   m_Layer: 0
   m_Name: Rock1
-  m_TagString: Untagged
+  m_TagString: Rock
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -192,7 +192,7 @@ GameObject:
   - 61: {fileID: 6100016}
   m_Layer: 0
   m_Name: Rock3
-  m_TagString: Untagged
+  m_TagString: Rock
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -226,7 +226,7 @@ GameObject:
   - 61: {fileID: 6100014}
   m_Layer: 0
   m_Name: Rock1
-  m_TagString: Untagged
+  m_TagString: Rock
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -245,7 +245,7 @@ GameObject:
   - 61: {fileID: 6100018}
   m_Layer: 0
   m_Name: Rock2
-  m_TagString: Untagged
+  m_TagString: Rock
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -264,7 +264,7 @@ GameObject:
   - 61: {fileID: 6100020}
   m_Layer: 0
   m_Name: Rock2
-  m_TagString: Untagged
+  m_TagString: Rock
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -283,7 +283,7 @@ GameObject:
   - 61: {fileID: 6100022}
   m_Layer: 0
   m_Name: Rock1
-  m_TagString: Untagged
+  m_TagString: Rock
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -317,7 +317,7 @@ GameObject:
   - 61: {fileID: 6100024}
   m_Layer: 0
   m_Name: Rock2
-  m_TagString: Untagged
+  m_TagString: Rock
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -336,7 +336,7 @@ GameObject:
   - 61: {fileID: 6100028}
   m_Layer: 0
   m_Name: Rock1
-  m_TagString: Untagged
+  m_TagString: Rock
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -370,7 +370,7 @@ GameObject:
   - 61: {fileID: 6100026}
   m_Layer: 0
   m_Name: Rock3
-  m_TagString: Untagged
+  m_TagString: Rock
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -404,7 +404,7 @@ GameObject:
   - 61: {fileID: 6100030}
   m_Layer: 0
   m_Name: Rock1
-  m_TagString: Untagged
+  m_TagString: Rock
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -423,7 +423,7 @@ GameObject:
   - 61: {fileID: 6100032}
   m_Layer: 0
   m_Name: Rock2
-  m_TagString: Untagged
+  m_TagString: Rock
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -473,7 +473,7 @@ GameObject:
   - 61: {fileID: 6100034}
   m_Layer: 0
   m_Name: Rock1
-  m_TagString: Untagged
+  m_TagString: Rock
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -492,7 +492,7 @@ GameObject:
   - 61: {fileID: 6100036}
   m_Layer: 0
   m_Name: Rock2
-  m_TagString: Untagged
+  m_TagString: Rock
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -511,7 +511,7 @@ GameObject:
   - 61: {fileID: 6100038}
   m_Layer: 0
   m_Name: Rock2
-  m_TagString: Untagged
+  m_TagString: Rock
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -530,7 +530,7 @@ GameObject:
   - 61: {fileID: 6100040}
   m_Layer: 0
   m_Name: Rock1
-  m_TagString: Untagged
+  m_TagString: Rock
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -564,7 +564,7 @@ GameObject:
   - 61: {fileID: 6100044}
   m_Layer: 0
   m_Name: Rock3
-  m_TagString: Untagged
+  m_TagString: Rock
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -610,7 +610,7 @@ GameObject:
   - 114: {fileID: 11400044}
   m_Layer: 0
   m_Name: Rocks
-  m_TagString: Untagged
+  m_TagString: Rock
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -629,7 +629,7 @@ GameObject:
   - 61: {fileID: 6100042}
   m_Layer: 0
   m_Name: Rock1
-  m_TagString: Untagged
+  m_TagString: Rock
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -648,7 +648,7 @@ GameObject:
   - 61: {fileID: 6100046}
   m_Layer: 0
   m_Name: Rock2
-  m_TagString: Untagged
+  m_TagString: Rock
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1118,7 +1118,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100066}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 7.54241562, y: 2.3654089, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 400068}
@@ -1576,7 +1576,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 100000}
   m_Enabled: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Size: {x: .976000011, y: .625999987}
   m_Center: {x: 0, y: 0}
 --- !u!61 &6100002
@@ -1587,7 +1587,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 100002}
   m_Enabled: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Size: {x: .976000011, y: .625999987}
   m_Center: {x: 0, y: 0}
 --- !u!61 &6100004
@@ -1598,7 +1598,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 100004}
   m_Enabled: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Size: {x: .976000011, y: .625999987}
   m_Center: {x: 2.38418579e-07, y: 0}
 --- !u!61 &6100006
@@ -1609,7 +1609,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 100010}
   m_Enabled: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Size: {x: .976000011, y: .625999987}
   m_Center: {x: 2.38418579e-07, y: 0}
 --- !u!61 &6100008
@@ -1620,7 +1620,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 100012}
   m_Enabled: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Size: {x: .976000011, y: .625999987}
   m_Center: {x: -1.1920929e-07, y: 0}
 --- !u!61 &6100010
@@ -1631,7 +1631,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 100014}
   m_Enabled: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Size: {x: 1.95799994, y: .657999992}
   m_Center: {x: -1.1920929e-07, y: 0}
 --- !u!61 &6100012
@@ -1642,7 +1642,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 100016}
   m_Enabled: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Size: {x: 1.95799994, y: .657999992}
   m_Center: {x: -1.1920929e-07, y: 0}
 --- !u!61 &6100014
@@ -1653,7 +1653,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 100024}
   m_Enabled: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Size: {x: 1.95799994, y: .657999992}
   m_Center: {x: 0, y: 0}
 --- !u!61 &6100016
@@ -1664,7 +1664,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 100020}
   m_Enabled: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Size: {x: 1.95799994, y: .657999992}
   m_Center: {x: -1.1920929e-07, y: 0}
 --- !u!61 &6100018
@@ -1675,7 +1675,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 100026}
   m_Enabled: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Size: {x: 1.95799994, y: .657999992}
   m_Center: {x: -5.96046448e-08, y: 0}
 --- !u!61 &6100020
@@ -1686,7 +1686,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 100028}
   m_Enabled: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Size: {x: .976000011, y: .625999987}
   m_Center: {x: -1.1920929e-07, y: 0}
 --- !u!61 &6100022
@@ -1697,7 +1697,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 100030}
   m_Enabled: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Size: {x: .976000011, y: .625999987}
   m_Center: {x: 2.38418579e-07, y: 0}
 --- !u!61 &6100024
@@ -1708,7 +1708,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 100034}
   m_Enabled: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Size: {x: 1.95799994, y: .657999992}
   m_Center: {x: -5.96046448e-08, y: 0}
 --- !u!61 &6100026
@@ -1719,7 +1719,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 100040}
   m_Enabled: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Size: {x: 1.95799994, y: .657999992}
   m_Center: {x: -1.1920929e-07, y: 0}
 --- !u!61 &6100028
@@ -1730,7 +1730,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 100036}
   m_Enabled: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Size: {x: 1.95799994, y: .657999992}
   m_Center: {x: 0, y: 0}
 --- !u!61 &6100030
@@ -1741,7 +1741,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 100044}
   m_Enabled: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Size: {x: 1.95799994, y: .657999992}
   m_Center: {x: -1.1920929e-07, y: 0}
 --- !u!61 &6100032
@@ -1752,7 +1752,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 100046}
   m_Enabled: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Size: {x: 1.95799994, y: .657999992}
   m_Center: {x: -1.1920929e-07, y: 0}
 --- !u!61 &6100034
@@ -1763,7 +1763,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 100052}
   m_Enabled: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Size: {x: .976000011, y: .625999987}
   m_Center: {x: 2.38418579e-07, y: 0}
 --- !u!61 &6100036
@@ -1774,7 +1774,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 100054}
   m_Enabled: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Size: {x: .976000011, y: .625999987}
   m_Center: {x: -1.1920929e-07, y: 0}
 --- !u!61 &6100038
@@ -1785,7 +1785,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 100056}
   m_Enabled: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Size: {x: 1.95799994, y: .657999992}
   m_Center: {x: -1.1920929e-07, y: 0}
 --- !u!61 &6100040
@@ -1796,7 +1796,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 100058}
   m_Enabled: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Size: {x: 1.95799994, y: .657999992}
   m_Center: {x: -1.1920929e-07, y: 0}
 --- !u!61 &6100042
@@ -1807,7 +1807,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 100070}
   m_Enabled: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Size: {x: 1.95799994, y: .657999992}
   m_Center: {x: 0, y: 0}
 --- !u!61 &6100044
@@ -1818,7 +1818,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 100062}
   m_Enabled: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Size: {x: 1.95799994, y: .657999992}
   m_Center: {x: -1.1920929e-07, y: 0}
 --- !u!61 &6100046
@@ -1829,7 +1829,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 100072}
   m_Enabled: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Size: {x: 1.95799994, y: .657999992}
   m_Center: {x: -5.96046448e-08, y: 0}
 --- !u!61 &6100048

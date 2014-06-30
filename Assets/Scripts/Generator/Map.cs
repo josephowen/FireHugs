@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class Map : MonoBehaviour {
@@ -93,7 +93,7 @@ public class Map : MonoBehaviour {
 								if(elevation <= m_groundRow) {
 									elevation++;
 									down = false;
-								} else if (elevation >= m_rows) {
+								} else if (elevation >= m_rows-1) {
 									elevation--;
 									down = true;
 								} else {

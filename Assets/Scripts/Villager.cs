@@ -12,8 +12,13 @@ public class Villager : MonoBehaviour {
 	
 	private Animator anim;
 	
+	private GameObject player;
+	
+	private int walkDir = +1;
+	
 	// Use this for initialization
 	void Start () {
+		player = GameObject.Find("Player");
 		anim = GetComponent<Animator>();
 	}
 	
@@ -24,20 +29,29 @@ public class Villager : MonoBehaviour {
 		
 		var distanceFromPlayer = Vector3.Distance(
 				transform.position,
-				GameObject.Find("Player").transform.position);
+				player.transform.position);
 
 		animator.SetFloat("DistanceFromPlayer", distanceFromPlayer);
 		
+		var runDir = transform.position.x - player.transform.position.x > 0
+			? +1
+			: -1;
 		
 		var state = GetCurrentState();
 		
 		if (state == walkState) {
-			Move(-walkSpeed);
+			if (HitWall()) {
+				walkDir = -walkDir;
+			}
+			Move(walkDir * walkSpeed);
 		}
 		else if (state == angryState) {
 		}
 		else if (state == runState) {
-			Move(+runSpeed);
+			if (NearWall() && IsGrounded()) {
+				Jump();
+			}
+			Move(runDir * runSpeed);
 		}
 	}
 	
@@ -51,5 +65,29 @@ public class Villager : MonoBehaviour {
 			transform.localScale = new Vector3(-scale.x, scale.y, scale.z);
 		}
 		transform.Translate(new Vector3(1,0,0) * speed * Time.deltaTime);
+	}
+	
+	bool HitWall() {
+		var dir = transform.localScale.x > 0 ? +1 : -1;
+		return Physics2D.Raycast(
+			transform.position,
+			new Vector3(dir,0.1f,0),
+			2.1f);
+	}
+	
+	bool NearWall() {
+		var dir = transform.localScale.x > 0 ? +1 : -1;
+		return Physics2D.Raycast(
+			transform.position,
+			new Vector3(dir,0.1f,0),
+			6f);
+	}
+	
+	bool IsGrounded() {
+		return Physics2D.Raycast(transform.position, -Vector3.up, 0.1f);
+	}
+	
+	void Jump() {
+		rigidbody2D.AddForce(Vector3.up * 20f);
 	}
 }
