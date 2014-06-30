@@ -274,7 +274,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   flocker: {fileID: 563780194}
-  startObjects: 200
+  startObjects: 500
 --- !u!4 &117885361
 Transform:
   m_ObjectHideFlags: 0
@@ -990,7 +990,7 @@ CircleCollider2D:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 563780194}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Radius: .300000012
@@ -2040,8 +2040,8 @@ Camera:
   near clip plane: .300000012
   far clip plane: 1000
   field of view: 91.5
-  orthographic: 0
-  orthographic size: 5
+  orthographic: 1
+  orthographic size: 10
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
