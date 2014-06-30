@@ -1,0 +1,115 @@
+
+skeleton.png
+size: 918,912
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+bad_guy__0005_body
+  rotate: false
+  xy: 2, 54
+  size: 542, 858
+  orig: 547, 858
+  offset: 5, 0
+  index: -1
+bad_guy__0006_l_arm_upper
+  rotate: false
+  xy: 546, 196
+  size: 372, 716
+  orig: 372, 716
+  offset: 0, 0
+  index: -1
+bad_guy__0011_head
+  rotate: true
+  xy: 546, 2
+  size: 192, 233
+  orig: 192, 233
+  offset: 0, 0
+  index: -1
+
+skeleton2.png
+size: 1017,1022
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+bad_guy__0004_pelvis
+  rotate: false
+  xy: 322, 336
+  size: 565, 686
+  orig: 565, 686
+  offset: 0, 0
+  index: -1
+bad_guy__0007_l_foot
+  rotate: false
+  xy: 2, 2
+  size: 507, 308
+  orig: 507, 308
+  offset: 0, 0
+  index: -1
+bad_guy__0009_r_foot
+  rotate: false
+  xy: 511, 89
+  size: 506, 245
+  orig: 506, 245
+  offset: 0, 0
+  index: -1
+bad_guy__0013_r_arm_upper
+  rotate: false
+  xy: 2, 312
+  size: 318, 710
+  orig: 318, 710
+  offset: 0, 0
+  index: -1
+
+skeleton3.png
+size: 923,835
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+bad_guy__0001_r_hand
+  rotate: true
+  xy: 325, 260
+  size: 312, 522
+  orig: 312, 522
+  offset: 0, 0
+  index: -1
+bad_guy__0002_l_arm_lower
+  rotate: true
+  xy: 2, 2
+  size: 256, 550
+  orig: 256, 550
+  offset: 0, 0
+  index: -1
+bad_guy__0003_l_hand
+  rotate: false
+  xy: 2, 268
+  size: 321, 567
+  orig: 321, 567
+  offset: 0, 0
+  index: -1
+bad_guy__0010_r_leg
+  rotate: true
+  xy: 325, 574
+  size: 261, 598
+  orig: 261, 598
+  offset: 0, 0
+  index: -1
+
+skeleton4.png
+size: 517,522
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+bad_guy__0008_l_leg
+  rotate: false
+  xy: 269, 6
+  size: 248, 516
+  orig: 248, 516
+  offset: 0, 0
+  index: -1
+bad_guy__0012_r_arm_lower
+  rotate: false
+  xy: 2, 2
+  size: 265, 520
+  orig: 265, 520
+  offset: 0, 0
+  index: -1
