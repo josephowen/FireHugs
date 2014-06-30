@@ -2003,6 +2003,10 @@ Prefab:
       propertyPath: m_TagString
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 11400038, guid: ca4ab2942c798fa4fa5e54d2a633fdd7, type: 2}
+      propertyPath: baseSpeed
+      value: 20
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ca4ab2942c798fa4fa5e54d2a633fdd7, type: 2}
   m_RootGameObject: {fileID: 1589380596}
@@ -2919,7 +2923,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 060b9b1c652334c6790841feb2df2c16, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
+  baseSpeed: 20
 --- !u!114 &1589380603
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2931,7 +2935,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 060b9b1c652334c6790841feb2df2c16, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
+  baseSpeed: .600000024
 --- !u!1 &1598116927
 GameObject:
   m_ObjectHideFlags: 0

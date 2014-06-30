@@ -3,7 +3,7 @@ using System.Collections;
 
 public class Player : MonoBehaviour {
 	
-	public float speed = 5f;
+	public float baseSpeed = 60f;
 
 	// Use this for initialization
 	void Start () {
@@ -14,9 +14,7 @@ public class Player : MonoBehaviour {
 	void Update () {
 		var dx = Input.GetAxis("Horizontal");
 		
-		var vel = rigidbody2D.velocity;
-		vel.x = dx * speed;
-		rigidbody2D.velocity = vel;
+		Move(dx * baseSpeed * transform.localScale.x);
 		
 		var dy = Input.GetAxis("Vertical");
 		
@@ -37,10 +35,12 @@ public class Player : MonoBehaviour {
 	
 	void updateScale() {
 		var numObjects = gameObject.GetComponentsInChildren<FlockingObject>().Length;
-		var baseScale = 0.05f;
+		var baseScale = 0.015f;
 		var scaleRatio = 0.02f;
 		
-		var scaleFactor = baseScale + scaleRatio * Mathf.Sqrt(numObjects);
+		var targetScale = baseScale + scaleRatio * Mathf.Sqrt(numObjects);
+		
+		var scaleFactor = transform.localScale.x + (targetScale - transform.localScale.x) * 0.1f;
 		
 		var scale = transform.localScale;
 		scale.x = scaleFactor;
@@ -55,5 +55,16 @@ public class Player : MonoBehaviour {
 		}
 		
 		rigidbody2D.mass = numObjects * 1f;
+	}
+	
+	void Move (float dx) {
+		if (dx < 0) {
+			transform.localEulerAngles = new Vector3(0,180,0);
+			dx = -dx;
+		}
+		else if (dx > 0) {
+			transform.localEulerAngles = new Vector3(0,0,0);
+		}
+		transform.Translate(new Vector3(1,0,0) * dx * Time.deltaTime);
 	}
 }
