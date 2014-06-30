@@ -18,6 +18,11 @@ public class PlayerTest : MonoBehaviour {
 		{
 			scaleBy(0.99f);
 		}
+
+		if (Input.GetKey(KeyCode.RightArrow))
+		{
+			rigidbody2D.AddForce(new Vector2(5, 0));
+		}
 	}
 
 	void scaleBy(float scaleFactor)
