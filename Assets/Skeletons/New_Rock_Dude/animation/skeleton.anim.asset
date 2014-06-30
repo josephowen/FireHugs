@@ -5,7 +5,7 @@ Avatar:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: player.anim
+  m_Name: skeleton.anim
   m_AvatarSize: 5500
   m_Avatar:
     serializedVersion: 3
@@ -1055,7 +1055,7 @@ Avatar:
             z: .999876618
             w: .0157073997
           s:
-            x: 1.53600001
+            x: 1
             y: 1
             z: 1
             w: 1

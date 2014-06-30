@@ -14,6 +14,8 @@ public class FlockObject : MonoBehaviour
 
 	void Start() {
 		GetComponent<SpriteRenderer> ().sprite = this.sprites[Random.Range (0, this.sprites.Length)];
+		chooseRandomTarget();
+		transform.parent = target.transform;
 	}
 
 	void Update()
@@ -21,6 +23,7 @@ public class FlockObject : MonoBehaviour
 		if ((Random.Range(0f, 1f) < randomCutoff) && (transform.position - target.transform.position).magnitude < distToSwitch)
 		{
 			chooseTarget();
+			transform.parent = target.transform;
 			gameObject.rigidbody2D.AddTorque(Random.Range(-20f,20f));
 		}
 
@@ -38,7 +41,73 @@ public class FlockObject : MonoBehaviour
 		//}
 	}
 
+	void chooseRandomTarget()
+	{
+		FlockTarget[] allTargets = flockSkeleton.transform.parent.GetComponentsInChildren<FlockTarget>();
+		//print(allTargets.Length);
+		target = allTargets[Random.Range(0, allTargets.Length)].gameObject;
+		transform.parent = target.transform;
+	}
+
 	void chooseTarget()
+	{
+		//print("Choosing target");
+		List<GameObject> allTargets = new List<GameObject>();
+		foreach (Transform child in target.transform.parent)
+		{
+			//print("Child found: " + child.gameObject);
+			foreach (Transform childTargetTransform in child.transform)
+			{
+				FlockTarget childTarget = childTargetTransform.GetComponent<FlockTarget>();
+				if (childTarget != null)
+				{
+					//print("Target under child found: " + childTarget.gameObject);
+					allTargets.Add(childTarget.gameObject);
+				}
+			}
+		}
+
+		if (target.transform.parent.parent != null)
+		{
+			//print("Parent found");
+			foreach (Transform parentTargetTransform in target.transform.parent.parent.transform)
+			{
+				FlockTarget parentTarget = parentTargetTransform.GetComponent<FlockTarget>();
+				if (parentTarget != null)
+				{
+					//print("Target under parent found");
+					allTargets.Add(parentTarget.gameObject);
+				}
+			}
+		}
+
+		allTargets.Add(target);
+		
+		int randomDecision = Random.Range(0, allTargets.Count);
+		target = allTargets[randomDecision];
+	}
+
+	void chooseTargetBasic()
+	{
+		//print("Choosing target");
+		List<GameObject> allTargets = new List<GameObject>();
+		foreach (Transform child in target.transform)
+		{
+			allTargets.Add(child.gameObject);
+		}
+
+		if (target.transform.parent.GetComponent<FlockTarget>() != null)
+		{
+			allTargets.Add(target.transform.parent.gameObject);
+		}
+
+		allTargets.Add(target);
+
+		int randomDecision = Random.Range(0, allTargets.Count);
+		target = allTargets[randomDecision];
+	}
+
+	void chooseTargetWeightedOld()
 	{
 		//print("Choosing target");
 		List<GameObject> allTargets = new List<GameObject>();
@@ -54,7 +123,7 @@ public class FlockObject : MonoBehaviour
 
 		totalWeights += 1;
 
-		if (target.transform.parent != null)
+		if (target.transform.parent.GetComponent<FlockTarget>() != null)
 		{
 			allTargets.Add(target.transform.parent.gameObject);
 			weights.Add(flockSkeleton.weight - totalWeights);
@@ -83,14 +152,14 @@ public class FlockObject : MonoBehaviour
 
 	void OnTriggerStay2D(Collider2D other)
 	{
-		//print(other.gameObject.transform.position);
-		float magnitude = ((CircleCollider2D)other).radius*2 - (transform.position - other.gameObject.transform.position).magnitude;
-		//print("Original Magnitude: " + magnitude);
-		Vector2 forceToAdd = (transform.position - other.gameObject.transform.position);
-		forceToAdd = forceToAdd / forceToAdd.magnitude;
-		//print("ForceToAdd: " + forceToAdd);
-		//print("Magnitude (should be 1): " + forceToAdd.magnitude);
-		gameObject.rigidbody2D.AddForce(avoidForce*magnitude * forceToAdd);
+		if (other.transform.parent != transform.parent)
+			return;
+
+		Vector2 diff = transform.position - other.gameObject.transform.position;
+		float magOrig = diff.magnitude;
+		float mag = ((CircleCollider2D)other).radius * 2 - magOrig;
+
+		gameObject.rigidbody2D.AddForce(avoidForce * mag * diff/magOrig);
 	}
 }
 
