@@ -2,7 +2,7 @@ using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 
-public class FlockObjecta : MonoBehaviour
+public class FlockObject : MonoBehaviour
 {
 	public float moveSpeed = 0.5f;
 	public Sprite[] sprites;
@@ -10,14 +10,19 @@ public class FlockObjecta : MonoBehaviour
 	public float avoidForce;
 	public float distToSwitch;
 	public float distToAttach;
-	public FlockTarget target = null;
+	private FlockTarget target = null;
+	private FlockTarget lastTarget = null;
 	public FlockSkeleton flockSkeleton = null;
+	public float angularVelocity = 0f;
 
-	void Start() {
-		collider2D.enabled = false;
-		GetComponent<SpriteRenderer> ().sprite = this.sprites[Random.Range (0, this.sprites.Length)];
+	void Start()
+	{
+		GetComponent<SpriteRenderer>().sprite = this.sprites[Random.Range(0, this.sprites.Length)];
 		chooseRandomTarget();
 		transform.parent = flockSkeleton.transform;
+		collider2D.enabled = false;
+		Destroy(rigidbody2D);
+		angularVelocity = Random.Range(-10f, 10f);
 	}
 
 	void Update()
@@ -31,17 +36,17 @@ public class FlockObjecta : MonoBehaviour
 		{
 			chooseTarget();
 			transform.parent = target.transform;
-			gameObject.rigidbody2D.AddTorque(Random.Range(-20f,20f));
 		}
 
 		Vector3 targetPos = target.transform.position;
-		gameObject.rigidbody2D.AddForce(moveSpeed*(targetPos - transform.position));
+		//gameObject.rigidbody2D.AddForce(moveSpeed * (targetPos - transform.position));
+		transform.position = Vector2.MoveTowards(transform.position, targetPos, moveSpeed);
+		transform.Rotate(new Vector3(0, 0, angularVelocity));
 	}
 
 	void chooseRandomTarget()
 	{
 		FlockTarget[] allTargets = flockSkeleton.transform.parent.GetComponentsInChildren<FlockTarget>();
-		//print(allTargets.Length);
 		target = allTargets[Random.Range(0, allTargets.Length)];
 		transform.parent = target.transform;
 	}
@@ -52,16 +57,16 @@ public class FlockObjecta : MonoBehaviour
 		target = target.GetComponent<FlockTarget>().nextOptions[randomDecision];
 	}
 
-	void OnTriggerStay2D(Collider2D other)
-	{
-		if (other.transform.parent != transform.parent)
-			return;
+	//void OnTriggerStay2D(Collider2D other)
+	//{
+	//	if (other.transform.parent != transform.parent)
+	//		return;
 
-		Vector2 diff = transform.position - other.gameObject.transform.position;
-		float magOrig = diff.magnitude;
-		float mag = ((CircleCollider2D)other).radius * 2 - magOrig;
+	//	Vector2 diff = transform.position - other.gameObject.transform.position;
+	//	float magOrig = diff.magnitude;
+	//	float mag = ((CircleCollider2D)other).radius * 2 - magOrig;
 
-		gameObject.rigidbody2D.AddForce(avoidForce * mag * diff/magOrig);
-	}
+	//	gameObject.rigidbody2D.AddForce(avoidForce * mag * diff / magOrig);
+	//}
 }
 
