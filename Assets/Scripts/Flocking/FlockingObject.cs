@@ -11,9 +11,12 @@ public class FlockingObject : MonoBehaviour
 	public float distToAttach = 3f;
 	public FlockTarget target = null;
 	public FlockSkeleton flockSkeleton = null;
+	
+	private GameObject player;
 
 	void Start() {
-		flockSkeleton = GameObject.Find("Player").GetComponentInChildren<FlockSkeleton>();
+		player = GameObject.Find("Player");
+		flockSkeleton = player.GetComponentInChildren<FlockSkeleton>();
 		transform.parent = flockSkeleton.transform;
 		chooseRandomTarget();
 		collider2D.enabled = false;
@@ -23,12 +26,14 @@ public class FlockingObject : MonoBehaviour
 
 	void Update()
 	{
-		if ((transform.position - target.transform.position).magnitude < distToAttach)
+		var scale = player.transform.localScale.x;
+		
+		if ((transform.position - target.transform.position).magnitude < distToAttach * scale)
 		{
 			transform.parent = target.transform;
 		}
 
-		if ((Random.Range(0f, 1f) < randomCutoff) && (transform.position - target.transform.position).magnitude < distToSwitch)
+		if ((Random.Range(0f, 1f) < randomCutoff) && (transform.position - target.transform.position).magnitude < distToSwitch * scale)
 		{
 			chooseTarget();
 			transform.parent = target.transform;
@@ -51,18 +56,6 @@ public class FlockingObject : MonoBehaviour
 	{
 		int randomDecision = Random.Range(0, target.GetComponent<FlockTarget>().nextOptions.Length);
 		target = target.GetComponent<FlockTarget>().nextOptions[randomDecision];
-	}
-
-	void OnTriggerStay2D(Collider2D other)
-	{
-		if (other.transform.parent != transform.parent)
-			return;
-
-		Vector2 diff = transform.position - other.gameObject.transform.position;
-		float magOrig = diff.magnitude;
-		float mag = ((CircleCollider2D)other).radius * 2 - magOrig;
-
-		gameObject.rigidbody2D.AddForce(avoidForce * mag * diff/magOrig);
 	}
 }
 

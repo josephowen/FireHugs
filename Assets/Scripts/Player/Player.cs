@@ -21,6 +21,8 @@ public class Player : MonoBehaviour {
 		if (dy > 0 && IsGrounded()) {
 			Jump();
 		}
+		
+		updateScale();
 	}
 	
 	void Jump() {
@@ -29,5 +31,24 @@ public class Player : MonoBehaviour {
 	
 	bool IsGrounded() {
 		return Physics2D.Raycast(transform.position, -Vector3.up, 0.1f);
+	}
+	
+	void updateScale() {
+		var numObjects = gameObject.GetComponentsInChildren<FlockingObject>().Length;
+		var scaleRatio = 0.05f;
+		
+		var scaleFactor = scaleRatio * Mathf.Sqrt(numObjects);
+		
+		var scale = transform.localScale;
+		scale.x = scaleFactor;
+		scale.y = scaleFactor;
+		transform.localScale = scale;
+		
+		foreach (FlockTarget target in GetComponentsInChildren<FlockTarget>()) {
+			scale = target.transform.localScale;
+			scale.x = scaleRatio / scaleFactor;
+			scale.y = scaleRatio / scaleFactor;
+			target.transform.localScale = scale;
+		}
 	}
 }
