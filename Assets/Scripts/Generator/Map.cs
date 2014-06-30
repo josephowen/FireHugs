@@ -156,7 +156,6 @@ public class Map : MonoBehaviour {
 		tile.Type = type;
 		tile.Texture = m_textureDictionary[tile.Type];
 		tile.Material = m_material;
-		Debug.Log(m_map.Length + " " + m_map[row].Length + " " + row + " " + col);
 		m_map[row][col] = tile;
 
 		go.transform.parent = m_gameObjectRow[row].transform;
