@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
 public class MainCamera : MonoBehaviour {
@@ -10,6 +10,8 @@ public class MainCamera : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-	
+		var pos = GameObject.Find("Player").transform.position;
+		pos.z = -50;
+		transform.position = pos;
 	}
 }
