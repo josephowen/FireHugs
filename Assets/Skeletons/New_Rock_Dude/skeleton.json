@@ -84,6 +84,24 @@
 	}
 },
 "animations": {
+	"Idle": {
+		"bones": {
+			"head": {
+				"translate": [
+					{ "time": 0, "x": 0, "y": 0 },
+					{ "time": 0.6666, "x": -35.95, "y": -1.7 },
+					{ "time": 1.3333, "x": 0, "y": 0 }
+				]
+			},
+			"chest": {
+				"translate": [
+					{ "time": 0, "x": 0, "y": 0 },
+					{ "time": 0.6666, "x": -23.99, "y": -0.11 },
+					{ "time": 1.3333, "x": 0, "y": 0 }
+				]
+			}
+		}
+	},
 	"animation": {
 		"bones": {
 			"pelvis": {
