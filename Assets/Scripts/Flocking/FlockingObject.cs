@@ -29,17 +29,23 @@ public class FlockingObject : MonoBehaviour
 	{
 		var scale = player.transform.localScale.x;
 		
+		// When detached from parent, find new target automatically
+		if (transform.parent == null) {
+			chooseClosestTarget();
+			chooseTarget();
+			// TODO: Make object zoom to new target.
+		}
+		
 		if ((transform.position - target.transform.position).magnitude < distToAttach * scale)
 		{
 			transform.parent = target.transform;
 		}
-
-		if ((Random.Range(0f, 1f) < randomCutoff) && (transform.position - target.transform.position).magnitude < distToSwitch * scale)
+		
+		if (Random.Range(0f, 1f) < randomCutoff && (transform.position - target.transform.position).magnitude < distToSwitch * scale)
 		{
 			chooseTarget();
-			transform.parent = target.transform;
 		}
-
+		
 		Vector3 targetPos = target.transform.position;
 		transform.position = Vector2.MoveTowards(transform.position, targetPos, moveSpeed * scale);
 		transform.Rotate(new Vector3(0, 0, angularVelocity * Time.deltaTime));
@@ -56,6 +62,24 @@ public class FlockingObject : MonoBehaviour
 	{
 		int randomDecision = Random.Range(0, target.GetComponent<FlockTarget>().nextOptions.Length);
 		target = target.GetComponent<FlockTarget>().nextOptions[randomDecision];
+		transform.parent = target.transform;
+	}
+	
+	void chooseClosestTarget()
+	{
+		var allTargets = flockSkeleton.transform.parent.GetComponentsInChildren<FlockTarget>();
+		FlockTarget closestTarget = null;
+		var closestDistance = Mathf.Infinity;
+		foreach (var currentTarget in allTargets) {
+			var currentDistance = Vector3.Distance(transform.position, currentTarget.transform.position);
+			if (currentDistance < closestDistance) {
+				closestDistance = currentDistance;
+				closestTarget = currentTarget;
+			}
+		}
+		if (closestTarget != null) {
+			target = closestTarget;
+		}
+		transform.parent = target.transform;
 	}
 }
-

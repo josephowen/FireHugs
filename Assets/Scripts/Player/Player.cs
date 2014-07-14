@@ -5,6 +5,8 @@ public class Player : MonoBehaviour {
 	
 	public float baseSpeed = 60f;
 
+	private float facingDir = +1f;
+
 	// Use this for initialization
 	void Start () {
 		
@@ -26,7 +28,7 @@ public class Player : MonoBehaviour {
 	}
 	
 	void Jump() {
-		rigidbody2D.AddForce(Vector3.up * 70f * rigidbody2D.mass);
+		rigidbody2D.AddForce(Vector3.up * 140f * rigidbody2D.mass);
 	}
 	
 	bool IsGrounded() {
@@ -34,14 +36,16 @@ public class Player : MonoBehaviour {
 	}
 	
 	void updateScale() {
-		var numObjects = gameObject.GetComponentsInChildren<FlockingObject>().Length;
+
+		var numObjects = FindObjectsOfType<FlockingObject>().Length;
+
 		var baseScale = 0.015f;
 		var scaleRatio = 0.02f;
 		
 		var targetScale = baseScale + scaleRatio * Mathf.Sqrt(numObjects);
 		
 		var scaleFactor = transform.localScale.x + (targetScale - transform.localScale.x) * 0.1f;
-		
+
 		var scale = transform.localScale;
 		scale.x = scaleFactor;
 		scale.y = scaleFactor;
@@ -58,13 +62,24 @@ public class Player : MonoBehaviour {
 	}
 	
 	void Move (float dx) {
-		if (dx < 0) {
-			transform.localEulerAngles = new Vector3(0,180,0);
-			dx = -dx;
+		Face(dx);
+		transform.Translate(new Vector3(1,0,0) * Mathf.Abs(dx) * Time.deltaTime);
+	}
+	
+	void Face(float dir) {
+		if (dir * facingDir < 0) {
+			facingDir = dir;
+
+			foreach (var flocker in GetComponentsInChildren<FlockingObject>()) {
+				flocker.transform.parent = null;
+			}
+			
+			if (dir > 0) {
+				transform.localEulerAngles = new Vector3(0,0,0);
+			}
+			else {
+				transform.localEulerAngles = new Vector3(0,180,0);
+			}
 		}
-		else if (dx > 0) {
-			transform.localEulerAngles = new Vector3(0,0,0);
-		}
-		transform.Translate(new Vector3(1,0,0) * dx * Time.deltaTime);
 	}
 }
